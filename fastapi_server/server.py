@@ -8,7 +8,7 @@ from model import load_model
 
 
 class Observation(BaseModel):
-    X: List[float]
+    X: List[List[float]]
 
 
 app = FastAPI()
