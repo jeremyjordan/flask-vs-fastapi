@@ -57,3 +57,13 @@ If we pass in an improper data type, we'll similarly get a useful error response
 >>> r.json()
 {'detail': [{'loc': ['X', 0, 0], 'msg': 'value is not a valid float', 'type': 'type_error.float'}, {'loc': ['X', 0, 1], 'msg': 'value is not a valid float', 'type': 'type_error.float'}, {'loc': ['X', 0, 2], 'msg': 'value is not a valid float', 'type': 'type_error.float'}]}
 ```
+
+## Exploring Starlette
+
+FastAPI uses Starlette under the hood, so I also made a complementary server in Starlette to see what kind of performance hit we take for all of FastAPI's nice features.
+
+```
+docker build -t starlette-image -f starlette_server/Dockerfile .
+docker run -it --rm -p 8002:8002 starlette-image
+locust -f load_testing/locustfile.py --host=http://127.0.0.1:8002
+```

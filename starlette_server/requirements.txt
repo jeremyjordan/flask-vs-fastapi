@@ -1,0 +1,5 @@
+gunicorn==19.9.0
+numpy==1.17.0
+scikit-learn==0.21.3
+starlette==0.12.8
+uvicorn==0.8.6
