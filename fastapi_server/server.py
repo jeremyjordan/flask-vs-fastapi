@@ -17,14 +17,14 @@ model = load_model()
 
 @app.get("/")
 async def index():
-    return f'Serving a {model.__class__.__name__} model using FastAPI.'
+    return f"Serving a {model.__class__.__name__} model using FastAPI."
 
 
-@app.post('/predict')
+@app.post("/predict")
 async def predict(observation: Observation):
     prediction = model.predict(observation.X)
-    return {'y': prediction.tolist()}
+    return {"y": prediction.tolist()}
 
 
-if __name__ == '__main__':
-    uvicorn.run(app, host='0.0.0.0', port=8001)
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8001)

@@ -1,6 +1,6 @@
 import numpy as np
-from sklearn import ensemble
-from sklearn import datasets
+
+from sklearn import datasets, ensemble
 from sklearn.utils import shuffle
 
 

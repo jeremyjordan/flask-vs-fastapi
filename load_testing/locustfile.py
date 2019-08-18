@@ -1,12 +1,12 @@
-from locust import HttpLocust, TaskSet, task
 import numpy as np
+from locust import HttpLocust, TaskSet, task
 
 
 class MyTaskSet(TaskSet):
     @task
     def predict(self):
-        payload = {'X': np.random.randn(2, 13).tolist()}
-        self.client.post('/predict', json=payload)
+        payload = {"X": np.random.randn(2, 13).tolist()}
+        self.client.post("/predict", json=payload)
 
 
 class MyLocust(HttpLocust):
