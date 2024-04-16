@@ -1,4 +1,4 @@
-gunicorn==19.9.0
+gunicorn==22.0.0
 numpy==1.22.0
 scikit-learn==0.21.3
 starlette==0.36.2
